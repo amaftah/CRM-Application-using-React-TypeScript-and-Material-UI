@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.4f315745.js",
+    "main.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.492bb418.js",
     "index.html": "/CRM-Application-using-React-TypeScript-and-Material-UI/index.html",
-    "main.4f315745.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.4f315745.js.map"
+    "main.492bb418.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.492bb418.js.map"
   },
   "entrypoints": [
-    "static/js/main.4f315745.js"
+    "static/js/main.492bb418.js"
   ]
 }
