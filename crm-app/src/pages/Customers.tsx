@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, Avatar, Button, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-
+import { Container, Typography, Avatar, Button, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { Card } from '@mui/material';
 const customers = [
   { name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890' },
   { name: 'Jane Smith', email: 'jane.smith@example.com', phone: '234-567-8901' },
