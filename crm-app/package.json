@@ -2,7 +2,7 @@
   "name": "crm-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://amaftah.github.io/CRM-Application-using-React-TypeScript-and-Material-UI", // Replace <username> and <repository> with your details
+  "homepage": "https://amaftah.github.io/CRM-Application-using-React-TypeScript-and-Material-UI", 
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
