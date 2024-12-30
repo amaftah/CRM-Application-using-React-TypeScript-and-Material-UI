@@ -7,26 +7,23 @@ const NavBar: React.FC = () => {
     <AppBar
       position="static"
       sx={{
-        background: 'rgba(255, 255, 255, 0.1)',
+        background: 'linear-gradient(120deg, #1976d2, #42a5f5)',
         boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
-        backdropFilter: 'blur(10px)',
-        border: '1px solid rgba(255, 255, 255, 0.3)',
-        borderRadius: '10px',
-        marginBottom: 4,
+        padding: '0.5rem 2rem',
       }}
     >
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1, color: '#FFFFFF' }}>
-          CRM Dashboard
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          CRM Application
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Button color="inherit" component={Link} to="/" sx={{ color: '#FFD700' }}>
+          <Button component={Link} to="/" sx={{ color: '#fff' }}>
             Dashboard
           </Button>
-          <Button color="inherit" component={Link} to="/customers" sx={{ color: '#1E90FF' }}>
+          <Button component={Link} to="/customers" sx={{ color: '#fff' }}>
             Customers
           </Button>
-          <Button color="inherit" component={Link} to="/reports" sx={{ color: '#32CD32' }}>
+          <Button component={Link} to="/reports" sx={{ color: '#fff' }}>
             Reports
           </Button>
         </Box>

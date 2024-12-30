@@ -1,6 +1,32 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, Box, Button, List, ListItem, ListItemText } from '@mui/material';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Box,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+} from '@mui/material';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  LineChart,
+  Line,
+  Legend,
+  AreaChart,
+  Area,
+} from 'recharts';
 
 const Dashboard: React.FC = () => {
   // Mock Data
@@ -9,6 +35,27 @@ const Dashboard: React.FC = () => {
     { name: 'February', value: 3000 },
     { name: 'March', value: 5000 },
     { name: 'April', value: 2000 },
+  ];
+
+  const revenueGrowth = [
+    { name: 'Q1', revenue: 15000 },
+    { name: 'Q2', revenue: 20000 },
+    { name: 'Q3', revenue: 18000 },
+    { name: 'Q4', revenue: 25000 },
+  ];
+
+  const userEngagement = [
+    { name: 'Website', engagement: 8000 },
+    { name: 'Mobile App', engagement: 6000 },
+    { name: 'Email Campaigns', engagement: 4000 },
+  ];
+
+  const performanceData = [
+    { month: 'January', performance: 70 },
+    { month: 'February', performance: 75 },
+    { month: 'March', performance: 80 },
+    { month: 'April', performance: 85 },
+    { month: 'May', performance: 90 },
   ];
 
   const colors = ['#FFD700', '#1E90FF', '#FF6347', '#32CD32'];
@@ -42,7 +89,6 @@ const Dashboard: React.FC = () => {
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
           backdropFilter: 'blur(10px)',
           border: '1px solid rgba(255, 255, 255, 0.3)',
-          color: '#FFFFFF',
         }}
       >
         <Typography variant="h3" gutterBottom>
@@ -53,14 +99,14 @@ const Dashboard: React.FC = () => {
         </Typography>
       </Box>
 
-      {/* Key Metrics */}
+      {/* KPIs Section */}
       <Grid container spacing={4} mt={4}>
         {[
-          { title: 'New Customers', value: 154, color: '#FFD700' },
-          { title: 'Revenue', value: '$60,000', color: '#1E90FF' },
-          { title: 'Open Tickets', value: 34, color: '#FF6347' },
-          { title: 'Tasks Completed', value: '85%', color: '#32CD32' },
-        ].map((metric, index) => (
+          { title: 'Total Customers', value: '1,245', color: '#FFD700' },
+          { title: 'Monthly Revenue', value: '$85,000', color: '#1E90FF' },
+          { title: 'Active Campaigns', value: 12, color: '#FF6347' },
+          { title: 'Team Performance', value: '95%', color: '#32CD32' },
+        ].map((kpi, index) => (
           <Grid item xs={12} md={3} key={index}>
             <Card
               sx={{
@@ -72,22 +118,11 @@ const Dashboard: React.FC = () => {
               }}
             >
               <CardContent>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: metric.color,
-                  }}
-                >
-                  {metric.title}
+                <Typography variant="h6" sx={{ color: kpi.color }}>
+                  {kpi.title}
                 </Typography>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontWeight: 'bold',
-                    color: metric.color,
-                  }}
-                >
-                  {metric.value}
+                <Typography variant="h3" sx={{ fontWeight: 'bold', color: kpi.color }}>
+                  {kpi.value}
                 </Typography>
               </CardContent>
             </Card>
@@ -136,22 +171,73 @@ const Dashboard: React.FC = () => {
           >
             <CardContent>
               <Typography variant="h6" gutterBottom>
-                Monthly Revenue Growth
+                Revenue Growth
               </Typography>
               <ResponsiveContainer width="100%" height={250}>
-                <BarChart data={salesData}>
+                <LineChart data={revenueGrowth}>
                   <XAxis dataKey="name" stroke="#FFFFFF" />
                   <YAxis stroke="#FFFFFF" />
                   <Tooltip />
-                  <Bar dataKey="value" fill="#FFD700" />
+                  <Legend />
+                  <Line type="monotone" dataKey="revenue" stroke="#1E90FF" />
+                </LineChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Card
+            sx={{
+              borderRadius: '20px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+            }}
+          >
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                User Engagement
+              </Typography>
+              <ResponsiveContainer width="100%" height={250}>
+                <BarChart data={userEngagement}>
+                  <XAxis dataKey="name" stroke="#FFFFFF" />
+                  <YAxis stroke="#FFFFFF" />
+                  <Tooltip />
+                  <Bar dataKey="engagement" fill="#FFD700" />
                 </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Card
+            sx={{
+              borderRadius: '20px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+            }}
+          >
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                Team Performance
+              </Typography>
+              <ResponsiveContainer width="100%" height={250}>
+                <AreaChart data={performanceData}>
+                  <XAxis dataKey="month" stroke="#FFFFFF" />
+                  <YAxis stroke="#FFFFFF" />
+                  <Tooltip />
+                  <Area type="monotone" dataKey="performance" stroke="#32CD32" fill="#32CD32" />
+                </AreaChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
 
-      {/* Tasks and Activities */}
+      {/* Tasks Section */}
       <Grid container spacing={4} mt={4}>
         <Grid item xs={12} md={6}>
           <Card
@@ -202,9 +288,13 @@ const Dashboard: React.FC = () => {
               </List>
               <Button
                 variant="contained"
-                color="primary"
+                sx={{
+                  mt: 2,
+                  backgroundColor: '#FFD700',
+                  color: '#000',
+                  '&:hover': { backgroundColor: '#FFC107' },
+                }}
                 fullWidth
-                sx={{ mt: 2, color: '#FFFFFF', background: '#FFD700' }}
               >
                 Add New Task
               </Button>

@@ -1,12 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import NavBar from './components/NavBar.tsx'; // Ensure NavBar exists
-import Dashboard from './pages/Dashboard.tsx'; // Ensure Dashboard exists
-import Customers from './pages/Customers.tsx'; // Ensure Customers exists
-import Reports from './pages/Reports.tsx'; // Ensure Reports exists
-import NotFound from './pages/NotFound.tsx'; // Ensure NotFound exists
+import NavBar from './components/NavBar.tsx';
+import { CircularProgress, Box } from '@mui/material';
 
+// Lazy load pages
+const Dashboard = lazy(() => import('./pages/Dashboard.tsx'));
+const Customers = lazy(() => import('./pages/Customers.tsx'));
+const Reports = lazy(() => import('./pages/Reports.tsx'));
+const NotFound = lazy(() => import('./pages/NotFound.tsx'));
+
+// Create Material-UI theme
 const theme = createTheme({
   palette: {
     primary: { main: '#1976d2' },
@@ -14,6 +18,7 @@ const theme = createTheme({
   },
 });
 
+// Dynamically set the basename
 const basename =
   process.env.NODE_ENV === 'development'
     ? '/'
@@ -23,18 +28,23 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router basename={basename}>
+      <BrowserRouter basename={basename}>
         <NavBar />
-        <Routes>
-          {/* Default route */}
-          <Route path="/" element={<Dashboard />} />
-          {/* Other routes */}
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/reports" element={<Reports />} />
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+        <Suspense
+          fallback={
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+              <CircularProgress />
+            </Box>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };
