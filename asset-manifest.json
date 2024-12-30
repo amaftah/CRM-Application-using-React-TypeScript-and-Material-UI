@@ -1,10 +1,28 @@
 {
   "files": {
-    "main.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.492bb418.js",
+    "main.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.0cda9555.js",
+    "static/js/975.bf078b1f.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/975.bf078b1f.chunk.js",
+    "static/js/584.7847cb47.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/584.7847cb47.chunk.js",
+    "static/js/814.394ec0c4.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/814.394ec0c4.chunk.js",
+    "static/js/150.aefafd6b.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/150.aefafd6b.chunk.js",
+    "static/js/447.768ed5e6.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/447.768ed5e6.chunk.js",
+    "static/js/160.c2ee895e.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/160.c2ee895e.chunk.js",
+    "static/js/685.558e905a.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/685.558e905a.chunk.js",
+    "static/js/727.2f6d704f.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/727.2f6d704f.chunk.js",
+    "static/js/689.d1ca18ff.chunk.js": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/689.d1ca18ff.chunk.js",
     "index.html": "/CRM-Application-using-React-TypeScript-and-Material-UI/index.html",
-    "main.492bb418.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.492bb418.js.map"
+    "main.0cda9555.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/main.0cda9555.js.map",
+    "975.bf078b1f.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/975.bf078b1f.chunk.js.map",
+    "584.7847cb47.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/584.7847cb47.chunk.js.map",
+    "814.394ec0c4.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/814.394ec0c4.chunk.js.map",
+    "150.aefafd6b.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/150.aefafd6b.chunk.js.map",
+    "447.768ed5e6.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/447.768ed5e6.chunk.js.map",
+    "160.c2ee895e.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/160.c2ee895e.chunk.js.map",
+    "685.558e905a.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/685.558e905a.chunk.js.map",
+    "727.2f6d704f.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/727.2f6d704f.chunk.js.map",
+    "689.d1ca18ff.chunk.js.map": "/CRM-Application-using-React-TypeScript-and-Material-UI/static/js/689.d1ca18ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.492bb418.js"
+    "static/js/main.0cda9555.js"
   ]
 }
