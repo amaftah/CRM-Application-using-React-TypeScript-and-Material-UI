@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import NavBar from './components/NavBar.tsx';
+import NavBar from './components/NavBar';
 import { CircularProgress, Box } from '@mui/material';
 
 // Lazy load pages
-const Dashboard = lazy(() => import('./pages/Dashboard.tsx'));
-const Customers = lazy(() => import('./pages/Customers.tsx'));
-const Reports = lazy(() => import('./pages/Reports.tsx'));
-const NotFound = lazy(() => import('./pages/NotFound.tsx'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Customers = lazy(() => import('./pages/Customers'));
+const Reports = lazy(() => import('./pages/Reports'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Create Material-UI theme
 const theme = createTheme({
